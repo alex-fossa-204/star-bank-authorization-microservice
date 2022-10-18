@@ -23,7 +23,7 @@ public class SwaggerConfig {
         return GroupedOpenApi.builder()
                 .group("a-bank-public")
                 .pathsToMatch("/star-bank/**")
-                .packagesToScan("by.andersen.abank.microservice.controller")
+                .packagesToScan("dev.alexfossa204.starbank.authorization.controller")
                 .build();
     }
 
