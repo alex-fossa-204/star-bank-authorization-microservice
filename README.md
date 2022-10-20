@@ -1,2 +1,2 @@
-# Banking back-end Authorization microservice v2
+# Star Bank Authorization microservice
 
