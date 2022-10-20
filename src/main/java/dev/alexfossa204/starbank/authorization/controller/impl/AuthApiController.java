@@ -21,9 +21,4 @@ public class AuthApiController implements AuthApi {
         return new ResponseEntity<>(authenticationManagerService.doLogin(body, authorizationMethod), HttpStatus.OK);
     }
 
-    @Override
-    public boolean validateToken(String token) {
-        return authenticationManagerService.validate(token);
-    }
-
 }

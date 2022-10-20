@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@Validated
 @RequestMapping(value = {"/star-bank/auth", "/"})
 @Tag(name = "Authorization management API", description = "This Component is responsible for user identification, authentication and authorization in Star Bank System")
 public interface AuthApi {
@@ -33,6 +32,4 @@ public interface AuthApi {
                                                                  @Valid @RequestBody LoginRequestDto body,
                                                                  @RequestHeader(name = "Authorization-Method") String authorizationMethod) throws ServiceException;
 
-    @GetMapping("/validate")
-    boolean validateToken(@RequestHeader("Authorization") String token);
 }

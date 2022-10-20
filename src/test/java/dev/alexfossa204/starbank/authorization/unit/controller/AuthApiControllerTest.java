@@ -93,7 +93,6 @@ class AuthApiControllerTest {
         mockMvc.perform(post("/a-banking/auth/login", loginRequestDtoByPhoneDummy)
                         .contentType(APPLICATION_JSON)
                         .accept(APPLICATION_JSON)
-                        //.content(new ObjectMapper().writeValueAsString(loginRequestDtoByPhoneDummy))
                         .header("Authorization-Method", AUTH_TYPE_PHONE.getDummyValue())
                         .with(csrf()))
                 .andDo(print())
