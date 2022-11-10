@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    environment {
+        PROJECT_NAME="star-bank-authorization-microservice"
+        VERSION="0.0.1"
+    }
+    stages {
+        stage('clone-repository-stage') {
+            steps {
+               sh "ls -l"
+            }
+        }
+    }
+}
