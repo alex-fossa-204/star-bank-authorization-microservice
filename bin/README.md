@@ -1,2 +1,0 @@
-# Star Bank Authorization microservice
-
