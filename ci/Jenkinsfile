@@ -6,8 +6,30 @@ pipeline {
     }
     stages {
         stage('clone-repository-stage') {
-            steps {
-               sh "ls -l"
+            try {
+                steps {
+                    echo "Repository successfully cloned. For project: ${PROJECT_NAME}"
+                    sh "ls -l"
+                }
+            } catch (exception) {
+                currentBuild.result = "FAILED"
+                throw exception
+            } finally {
+                notifyBuild(currentBuild.result)
+            }
+        }
+        stage('build-stage') {
+            try {
+                steps {
+                    sh "ls -l"
+                    sh "docker --version"
+                    sh "docker image ls"
+                }
+            } catch (exception) {
+                currentBuild.result = "FAILED"
+                throw exception
+            } finally {
+                notifyBuild(currentBuild.result)
             }
         }
     }

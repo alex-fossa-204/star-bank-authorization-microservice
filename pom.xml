@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>by.andersen.abank</groupId>
-    <artifactId>auth-microservice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>authorization-microservice</artifactId>
+    <version>0.0.1</version>
     <name>auth-microservice</name>
     <description>auth-microservice</description>
     <properties>
@@ -30,6 +30,7 @@
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <maven-compiler.version>3.8.1</maven-compiler.version>
     </properties>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
