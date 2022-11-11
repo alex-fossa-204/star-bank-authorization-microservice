@@ -1,22 +1,16 @@
-pipeline {
-    agent any
-    environment {
-        PROJECT_NAME="star-bank-authorization-microservice"
-        VERSION="0.0.1"
-    }
-    stages {
-        stage('clone-repository-stage') {
-            steps {
-                echo "Repository successfully cloned. For project: ${PROJECT_NAME}"
-                sh "ls -l"
-            }
+node {
+    def WORKSPACE = "/var/lib/jenkins/workspace/"
+    def dockerImageTag = "star-bank/authorization-microservice"
+
+    try {
+        notifyBuild('STARTED')
+        stage('check-repository-clone') {
+            sh "ls -l"
         }
-        stage('build-stage') {
-            steps {
-                sh "ls -l"
-                sh "docker --version"
-                sh "docker image ls"
-            }
-        }
+    } catch(e) {
+        currentBuild.result = "FAILED"
+        throw e
+    } finally {
+        notifyBuild(currentBuild.result)
     }
 }
